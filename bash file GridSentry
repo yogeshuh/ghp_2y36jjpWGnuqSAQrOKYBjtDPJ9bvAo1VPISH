@@ -1,0 +1,17 @@
+# Project
+export ENV_HOME=$PWD
+export ENV_PROJECT=GAudit
+export ENV_DJANGO_SECRET_KEY='x1n87+d^o^p&vrp#u49%0@&x&(56(-8oo%#&1-q#'
+export PYTHONPATH=$ENV_HOME/backend
+export ENV_SITE=im_gaudit
+# Database
+export ENV_DB_USER=gaudit
+export ENV_DB_NAME=imdev
+export ENV_DB_PASSWORD="gaudit@123"
+# Super Admin
+export ENV_ADMIN_USER=gsadmin
+export ENV_ADMIN_PASSWORD="GS@dm!n24"
+export ENV_ADMIN_EMAIL=admin@gmail.com
+# Server
+export ENV_SERVER_TYPE=dev
+export DEBUG=1
