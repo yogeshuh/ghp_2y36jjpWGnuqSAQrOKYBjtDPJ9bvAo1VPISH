@@ -1,0 +1,29 @@
+# Project
+export ENV_HOME=~                                        #Path to the project directory
+export ENV_PROJECT=GAudit
+export ENV_DJANGO_SECRET_KEY='x1n87+d^o^p&vrp#u49%0@&x&(56(-8oo%#&1-q#'         #Django Secret key
+export PYTHONPATH=$ENV_HOME/$ENV_PROJECT/backend
+
+ #Database
+export ENV_DB_HOST=localhost            #Optional
+export ENV_DB_PORT=5432                 #Optional
+export ENV_DB_NAME=gaudit         # Replace with actual DB name
+export ENV_DB_USER=gaudit        # Replace with actual DB user
+export ENV_DB_PASSWORD=gaudit@123 # Replace with actual DB password
+
+# Super Admin
+export ENV_ADMIN_USER=gsadmin        # Replace with actual admin username
+export ENV_ADMIN_PASSWORD=GS@dm!n24 # Replace with actual admin password
+export ENV_ADMIN_EMAIL=admin@example.com # Optional: Replace with actual admin email
+export ENV_ADMIN_FIRST_NAME=Admin       # Optional: Replace with admin's first name
+export ENV_ADMIN_LAST_NAME=User         # Optional: Replace with admin's last name
+
+# Server
+export ENV_SERVER_TYPE=webserver
+export ENV_NUM_PROCESSES=8              # No. of uwsgi worker processes
+export ENV_MAX_BODY_SIZE=1024           # client_max_body_size config in nginx
+export ENV_SITE=im_gaudit
+export ENV_SITES=18.222.69.25
+
+# NVD Access. Only in GAudit Deployment
+export NVD_API_KEY=d9d2a2ab-3cb6-4575-9134-997f2955a455
