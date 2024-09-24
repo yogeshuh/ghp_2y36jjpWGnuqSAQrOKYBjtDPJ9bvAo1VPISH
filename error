@@ -1,0 +1,98 @@
+gridsentry@gslab1:~/GAudit_Only_2.0/backend$ ENV_SITE=im_gaudit sh ../deploy/utils.sh dev
+Creating Database: imdev
+[sudo] password for gridsentry: 
+could not change directory to "/home/gridsentry/GAudit_Only_2.0/backend": Permission denied
+ERROR:  database "imdev" already exists
+could not change directory to "/home/gridsentry/GAudit_Only_2.0/backend": Permission denied
+GRANT
+System check identified some issues:
+
+WARNINGS:
+user.Profile.substation: (fields.W340) null has no effect on ManyToManyField.
+/home/gridsentry/.local/lib/python3.10/site-packages/django/core/management/commands/makemigrations.py:105: RuntimeWarning: Got an error checking a consistent migration history performed for database connection 'default': connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  role "gaudit" does not exist
+
+  warnings.warn(
+No changes detected in apps 'organisation', 'core', 'audit_trail', 'scm', 'user', 'vam'
+Migrating database default.
+Traceback (most recent call last):
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  role "gaudit" does not exist
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gridsentry/GAudit_Only_2.0/backend/manage.py", line 21, in <module>
+    main()
+  File "/home/gridsentry/GAudit_Only_2.0/backend/manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/core/management/base.py", line 354, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/core/management/base.py", line 89, in wrapped
+    res = handle_func(*args, **kwargs)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/core/management/commands/migrate.py", line 75, in handle
+    self.check(databases=[database])
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/core/management/base.py", line 419, in check
+    all_issues = checks.run_checks(
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/core/checks/model_checks.py", line 34, in check_all_models
+    errors.extend(model.check(**kwargs))
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1290, in check
+    *cls._check_indexes(databases),
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1682, in _check_indexes
+    connection.features.supports_covering_indexes or
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/postgresql/features.py", line 93, in is_postgresql_11
+    return self.connection.pg_version >= 110000
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 329, in pg_version
+    with self.temporary_connection():
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 603, in temporary_connection
+    with self.cursor() as cursor:
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/gridsentry/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  role "gaudit" does not exist
